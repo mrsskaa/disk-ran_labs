@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstdio>
 #include <vector>
 
 int lowerBound(const std::vector<long long>& a, long long x) {
@@ -35,16 +35,16 @@ int upperBound(const std::vector<long long>& a, long long x) {
 
 int main() {
     int n, q;
-    std::cin >> n >> q;
+    std::scanf("%d%d", &n, &q);
 
     std::vector<long long> a(n);
     for (int i = 0; i < n; i++) {
-        std::cin >> a[i];
+        std::scanf("%lld", &a[i]);
     }
 
     for (int i = 0; i < q; i++) {
         long long x;
-        std::cin >> x;
+        std::scanf("%lld", &x);
 
         int lower = lowerBound(a, x);
         int upper = upperBound(a, x);
@@ -57,6 +57,6 @@ int main() {
             upper = -1;
         }
 
-        std::cout << lower << ' ' << upper << ' ' << count << '\n';
+        std::printf("%d %d %d\n", lower, upper, count);
     }
 }
